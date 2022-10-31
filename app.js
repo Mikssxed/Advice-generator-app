@@ -3,7 +3,7 @@ const advice = document.querySelector('p');
 const button = document.querySelector('button')
 
 const getAdvice = () => {
-    fetch('https://api.adviceslip.com/advice').then(response => {
+    fetch('https://api.adviceslip.com/advice', {cache: "no-store"}).then(response => {
     return response.json();
   }).then(showAdvice => {
     const adviceObj = showAdvice.slip;
